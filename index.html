@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BLACKLINE MATRIX — 3D Neon</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="space-gradient" aria-hidden="true"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <div class="container nav-container">
+      <img src="images/Asset 3.png" alt="BLACKLINE MATRIX" class="logo"/>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#charts">Market</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" data-aos="fade-up">
+    <div class="container">
+      <img src="images/2.jpg" class="hero-logo" alt="BLACKLINE MATRIX" />
+      <h1>BLACKLINE MATRIX</h1>
+      <canvas id="particles"></canvas>
+      <p>Empowering Traders | Mastering Forex & Gold | Building Wealth Together</p>
+      <div class="cta-row">
+        <a class="btn" href="#services">Explore Services</a>
+        <a class="btn ghost" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MISSION ===== -->
+  <section id="mission" data-aos="fade-right">
+    <div class="container">
+      <h2 class="title-underline">Our Mission</h2>
+      <p class="section-lead">
+        At <strong>BLACKLINE MATRIX</strong>, our mission is to empower individuals worldwide with the skills 
+        and strategies to achieve financial independence through trading. We believe in discipline, 
+        knowledge-sharing, and community growth.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== VISION ===== -->
+  <section id="vision" data-aos="fade-left">
+    <div class="container">
+      <h2 class="title-underline">Our Vision</h2>
+      <p class="section-lead">
+        To be the world’s most trusted trading community, transforming beginners into professional traders 
+        and creating a global network of financially independent individuals.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" data-aos="zoom-in">
+    <div class="container">
+      <h2 class="title-underline">Our Services</h2>
+      <div class="service-grid">
+        <div class="card tilt" data-tilt>
+          <img src="images/Essential-Trading-Education.jpg" alt="Forex Training">
+          <h3>Trading Education</h3>
+          <p>Step-by-step forex and gold trading mentorship for beginners & advanced traders.</p>
+        </div>
+        <div class="card tilt" data-tilt>
+          <img src="images/1_7O0P7sMfkXwcx_YNjqPHyg.jpg" alt="Trading Signals">
+          <h3>Premium Signals</h3>
+          <p>Accurate forex & gold trading signals with real-time alerts and strategies.</p>
+        </div>
+        <div class="card tilt" data-tilt>
+          <img src="images/community.png" alt="Community">
+          <h3>Global Community</h3>
+          <p>Join our fast-growing worldwide trading community, share insights and grow together.</p>
+        </div>
+        <div class="card tilt" data-tilt>
+          <img src="images/ict.jpg" alt="Market Analysis">
+          <h3>Market Analysis</h3>
+          <p>Daily technical & fundamental analysis for consistent profitable trading.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIVE MARKET CHART ===== -->
+  <section id="charts" data-aos="fade-up">
+    <div class="container">
+      <h2 class="title-underline">Live Market</h2>
+      <div class="chart-container tilt" data-tilt>
+        <iframe src="https://s.tradingview.com/widgetembed/?symbol=OANDA:XAUUSD&interval=15&hidesidetoolbar=1&theme=dark" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" data-aos="fade-left">
+    <div class="container">
+      <h2 class="title-underline">Contact Us</h2>
+      <p><strong>Email:</strong> info@blacklinematrix.com</p>
+      <p><strong>Phone:</strong> +92 310 1070263</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 BLACKLINE MATRIX. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button id="scrollToTopBtn" title="Go to top">⬆</button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
