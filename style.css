@@ -1,14 +1,12 @@
-
-
 /* ===== Root Theme Variables ===== */
 :root {
   --bg: #000;
   --bg-alt: #0a0a0a;
   --text: #ffffff;
   --muted: #ffffff;
-  --primary: #b86fda;      /* Neon purple */
+  --primary: rgb(231 29 255);      /* Neon purple */
   --secondary: #ff2bd8;    /* Neon pink */
-  --accent: #2e9bbc;       /* Neon cyan */
+  --accent: #ff2bd8;       /* Neon cyan */
   --radius: 10px;
 }
 
@@ -16,7 +14,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+
 }
 
 body {
@@ -155,7 +153,7 @@ header {
 
 .btn {
   background: var(--accent);
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 12px 24px;
   margin: 20px;
   border-radius: var(--radius);
@@ -200,6 +198,39 @@ section {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.info-card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--primary);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--txt);
+  box-shadow: 0 0 15px var(--primary);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 25px var(--secondary);
+}
+
+.info-card h2 {
+  color: rgb(255, 255, 255);
+  margin-bottom: 1rem;
+}
+
+.info-card p {
+  line-height: 1.6;
+  color: var(--muted);
+}
+
 
 /* ===== Services Grid ===== */
 .service-grid {
@@ -231,6 +262,47 @@ section {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px var(--primary);
+}
+/* ===== Apps Carousel ===== */
+#apps-carousel {
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+#apps-carousel h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 15s linear infinite;
+}
+
+.carousel img {
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px rgb(0, 0, 0) );
+  transition: transform 0.3s ease;
+}
+
+.carousel img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ===== Live Chart ===== */
@@ -268,6 +340,72 @@ section {
   transform: scale(1.05);
   box-shadow: 0 0 20px var(--accent);
 }
+/* Intro Section */
+
+.title-underline {
+  color: white; /* default text color */
+}
+
+.title-underline .highlight {
+  color: #ff2bd8; /* your neon pink or any color you want */
+}
+
+.intro-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.intro-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.intro-text h2 {
+  margin-bottom: 15px;
+}
+
+.intro-video {
+  flex: 1;
+  min-width: 280px;
+}
+
+.intro-video iframe {
+  width: 100%;
+  height: 315px;
+  border-radius: 10px;
+}
+
+/* Statistics Section */
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.stat-box h3 {
+  font-size: 2.5rem;
+  color: rgb(231 29 255);;
+  margin-bottom: 5px;
+}
+
+.stat-box p {
+  font-size: 1rem;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .intro-container {
+    flex-direction: column;
+  }
+  .stats-container {
+    flex-direction: column;
+  }
+}
+
 
 /* ===== Comments ===== */
 .comment-section form {
@@ -341,3 +479,5 @@ footer {
     flex-direction: column;
   }
 }
+
+
