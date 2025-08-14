@@ -1,3 +1,5 @@
+
+
 // ===== AOS Init =====
 document.addEventListener('DOMContentLoaded', () => {
   AOS.init({ duration: 900, once: true });
@@ -42,63 +44,59 @@ hero.addEventListener('mouseleave', () => {
   hero.style.transform = 'rotateX(0) rotateY(0)';
 });
 
-// ===== Particles Background =====
-const canvas = document.getElementById('particles');
+// ===== Trading Chart Background =====
+const canvas = document.getElementById('particles'); // reuse same canvas id
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let particlesArray = [];
+let chartData = [];
+const chartLines = 3; // number of animated lines
 const colors = ['#6a00ff', '#ff00ea', '#00f5ff'];
-const numParticles = 100;
 
-class Particle {
-  constructor() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 3 + 1;
-    this.speedX = (Math.random() - 0.5) * 1;
-    this.speedY = (Math.random() - 0.5) * 1;
-    this.color = colors[Math.floor(Math.random() * colors.length)];
-  }
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-  }
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = this.color;
-    ctx.shadowColor = this.color;
-    ctx.shadowBlur = 10;
-    ctx.fill();
+function initChart() {
+  chartData = [];
+  for (let i = 0; i < chartLines; i++) {
+    const points = [];
+    for (let x = 0; x < canvas.width; x += 20) {
+      points.push({
+        x,
+        y: canvas.height / 2 + Math.sin(x * 0.01 + i) * 50 + (Math.random() * 40 - 20)
+      });
+    }
+    chartData.push(points);
   }
 }
 
-function initParticles() {
-  particlesArray = [];
-  for (let i = 0; i < numParticles; i++) {
-    particlesArray.push(new Particle());
-  }
-}
-
-function animateParticles() {
+function animateChart() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particlesArray.forEach(p => {
-    p.update();
-    p.draw();
+
+  chartData.forEach((points, index) => {
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, points[0].y);
+
+    for (let i = 1; i < points.length; i++) {
+      points[i].y += Math.sin(Date.now() / 500 + i) * 0.3; // wave effect
+      ctx.lineTo(points[i].x, points[i].y);
+    }
+
+    ctx.strokeStyle = colors[index % colors.length];
+    ctx.lineWidth = 2;
+    ctx.shadowBlur = 20;
+    ctx.shadowColor = colors[index % colors.length];
+    ctx.stroke();
   });
-  requestAnimationFrame(animateParticles);
+
+  requestAnimationFrame(animateChart);
 }
 
-initParticles();
-animateParticles();
+initChart();
+animateChart();
+
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  initParticles();
+  initChart();
 });
 
 // ===== Mobile Navbar Toggle =====
@@ -109,4 +107,15 @@ document.querySelector('.nav-container').appendChild(navToggle);
 
 navToggle.addEventListener('click', () => {
   document.querySelector('.main-nav').classList.toggle('show');
+});
+
+window.addEventListener("scroll", function() {
+  const header = document.querySelector("header");
+  header.classList.toggle("scrolled", window.scrollY > 50);
+});
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
 });
