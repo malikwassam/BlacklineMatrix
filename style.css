@@ -4,7 +4,7 @@
   --bg-alt: #0a0a0a;
   --text: #ffffff;
   --muted: #ffffff;
-  --primary: rgb(231 29 255);      /* Neon purple */
+  --primary: #ffffff;      /* Neon purple */
   --secondary: #ff2bd8;    /* Neon pink */
   --accent: #ff2bd8;       /* Neon cyan */
   --radius: 10px;
@@ -479,5 +479,6 @@ footer {
     flex-direction: column;
   }
 }
+
 
 
