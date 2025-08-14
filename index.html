@@ -1,43 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ===== Meta Info ===== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BLACKLINE MATRIX</title>
 
-  <!-- Google Font -->
+  <!-- ===== Fonts & Icons ===== -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
-  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- ===== Libraries ===== -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <!-- Main Styles -->
+
+  <!-- ===== Main Styles ===== -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- ===== Background Gradient ===== -->
   <div class="space-gradient" aria-hidden="true"></div>
+
+  <!-- ===== Top Banner Image ===== -->
+  <div class="top-banner">
+    <img src="images/nav.PNG" alt="Blackline Matrix Banner">
+  </div>
 
   <!-- ===== NAVBAR ===== -->
   <header>
-    <div class="container nav-container">
-      <img src="images/Asset 3.png" alt="BLACKLINE MATRIX" class="logo"/>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="#vision">Vision</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#charts">Market</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="container nav-container">
 
-  <!-- ===== HERO ===== -->
+    <!-- Navigation Links (Left) -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#comments">Comments</a></li>
+      </ul>
+    </nav>
+
+    <!-- Social Icons (Right) -->
+    <div class="social-icons">
+      <a href="https://www.tiktok.com/@yourusername" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/@blacklinematrix" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/03331235678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+  </div>
+</header>
+
+  <!-- ===== HERO SECTION ===== -->
   <section class="hero" data-aos="fade-up">
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="images/Forex Trading Background Video1080p.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Hero Content -->
     <div class="container">
-      <img src="images/2.jpg" class="hero-logo" alt="BLACKLINE MATRIX" />
+      <img src="images/Bull.png" class="hero-logo" alt="BLACKLINE MATRIX" />
       <h1>BLACKLINE MATRIX</h1>
-      <canvas id="particles"></canvas>
+      <p>The Land Of Oppurtunities</p>
       <p>Empowering Traders | Mastering Forex & Gold | Building Wealth Together</p>
       <div class="cta-row">
         <a class="btn" href="#services">Explore Services</a>
@@ -74,21 +101,25 @@
     <div class="container">
       <h2 class="title-underline">Our Services</h2>
       <div class="service-grid">
+        <!-- Card 1 -->
         <div class="card tilt" data-tilt>
           <img src="images/Essential-Trading-Education.jpg" alt="Forex Training">
           <h3>Trading Education</h3>
           <p>Step-by-step forex and gold trading mentorship for beginners & advanced traders.</p>
         </div>
+        <!-- Card 2 -->
         <div class="card tilt" data-tilt>
           <img src="images/1_7O0P7sMfkXwcx_YNjqPHyg.jpg" alt="Trading Signals">
           <h3>Premium Signals</h3>
           <p>Accurate forex & gold trading signals with real-time alerts and strategies.</p>
         </div>
+        <!-- Card 3 -->
         <div class="card tilt" data-tilt>
           <img src="images/community.png" alt="Community">
           <h3>Global Community</h3>
           <p>Join our fast-growing worldwide trading community, share insights and grow together.</p>
         </div>
+        <!-- Card 4 -->
         <div class="card tilt" data-tilt>
           <img src="images/ict.jpg" alt="Market Analysis">
           <h3>Market Analysis</h3>
@@ -108,6 +139,46 @@
     </div>
   </section>
 
+  <!-- ===== SUBSCRIPTION PLANS ===== -->
+  <section id="plans">
+    <div class="container">
+      <h2>Subscription Plans</h2>
+      <div class="plans">
+        <div class="plan">
+          <h3>Free Trading</h3>
+          <p class="plan-price">$0 / month</p>
+          <p>Access to basic market updates and community chat.</p>
+          <button class="btn">Join Free</button>
+        </div>
+        <div class="plan">
+          <h3>Premium Signals</h3>
+          <p class="plan-price">$29 / month</p>
+          <p>Daily premium signals & advanced strategies.</p>
+          <button class="btn">Subscribe</button>
+        </div>
+        <div class="plan">
+          <h3>VIP Mentorship</h3>
+          <p class="plan-price">$99 / month</p>
+          <p>1-on-1 mentorship & lifetime signal access.</p>
+          <button class="btn">Become VIP</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMMENTS SECTION ===== -->
+  <section id="comments">
+    <div class="container comment-section">
+      <h2>Leave a Comment</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Comment" required></textarea>
+        <button class="btn">Submit Comment</button>
+      </form>
+    </div>
+  </section>
+
   <!-- ===== CONTACT ===== -->
   <section id="contact" data-aos="fade-left">
     <div class="container">
@@ -124,12 +195,14 @@
     </div>
   </footer>
 
-  <!-- Scroll to top -->
+  <!-- ===== Scroll to Top Button ===== -->
   <button id="scrollToTopBtn" title="Go to top">⬆</button>
 
-  <!-- Scripts -->
+  <!-- ===== Scripts ===== -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
+
 
