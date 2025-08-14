@@ -1,5 +1,3 @@
-
-
 // ===== AOS Init =====
 document.addEventListener('DOMContentLoaded', () => {
   AOS.init({ duration: 900, once: true });
@@ -119,3 +117,5 @@ const navLinks = document.querySelector(".nav-links");
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
+
+
